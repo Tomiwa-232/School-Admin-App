@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <link rel="stylesheet" href="css/dataTables.bootstrap5.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>School Admin App Dev - Dashboard</title>
+    <style>
+      body {
+        overflow: hidden; /* Remove scroll bar */
+      }
+
+      .modal-dialog {
+        max-width: 90%; /* Adjust modal width */
+        margin: auto;
+      }
+
+      .modal-content {
+        overflow: visible; /* Ensure no scrollbars appear */
+      }
+    </style>
+  </head>
+  <body>
+    <!-- top navigation bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container-fluid">
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#sidebar"
+          aria-controls="offcanvasExample"
+        >
+          <span class="navbar-toggler-icon" data-bs-target="#sidebar"></span>
+        </button>
+        <a
+          class="navbar-brand me-auto ms-lg-0 ms-3 text-uppercase fw-bold"
+          href="#"
+          >SCHOOL NAME HERE</a
+        >
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#topNavBar"
+          aria-controls="topNavBar"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="topNavBar">
+          <form class="d-flex ms-auto my-3 my-lg-0">
+            <div class="input-group">
+              <input
+                class="form-control"
+                type="search"
+                placeholder="Search"
+                aria-label="Search"
+              />
+              <button class="btn btn-primary" type="submit">
+                <i class="bi bi-search"></i>
+              </button>
+            </div>
+          </form>
+          <ul class="navbar-nav">
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle ms-2"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                <i class="bi bi-person-fill"></i>
+              </a>
+              <ul class="dropdown-menu dropdown-menu-end">
+                <li>
+                  <a class="dropdown-item text-danger fw-bold" href="index.html">Log out</a>
+                </li>
+                <li><a class="dropdown-item" href="#">Another Action</a></li>
+                <li></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- top navigation bar end -->
+    <!-- offcanvas -->
+    <div
+        class="offcanvas offcanvas-start sidebar-nav bg-dark"
+        tabindex="-1"
+        id="sidebar"
+    >
+        <div class="offcanvas-body p-0">
+            <nav class="navbar-dark">
+                <ul class="navbar-nav navbar-brand">
+                    <li>
+                        <div class="text-muted small fw-bold text-uppercase px-3">
+                        EXPLORE
+                        </div>
+                    </li>
+
+                    <li class="my-4"><hr class="dropdown-divider bg-light" /></li>
+                    
+                    <li>
+                        <a href="homepage.html" class="nav-link px-3 fw-bold">
+                        <span class="me-2"><i class="bi bi-house-fill"></i></span>
+                        <span>HOME</span>
+                        </a>
+                    </li>
+                    
+                    <li class="my-4"><hr class="dropdown-divider bg-light" /></li>
+                    
+                    <li>
+                        <a href="dashboard.html" class="nav-link px-3 fw-bold active">
+                        <span class="me-2"><i class="bi bi-speedometer2"></i></span>
+                        <span>DASHBOARD</span>
+                        </a>
+                    </li>
+                    
+                    <li class="my-4"><hr class="dropdown-divider bg-light" /></li>
+                    
+                    <li>
+                        <a href="students-data.html" class="nav-link px-3 fw-bold">
+                        <span class="me-2"><i class="bi bi-person-vcard-fill"></i></span>
+                        <span>STUDENTS DATA</span>
+                        </a>
+                    </li>
+                    
+                    <li class="my-4"><hr class="dropdown-divider bg-light" /></li>
+                    
+                    <li>
+                        <a href="payments.html" class="nav-link px-3 fw-bold">
+                        <span class="me-2"><i class="bi bi-bank"></i></span>
+                        <span>PAYMENTS</span>
+                        </a>
+                    </li>
+                    
+                    <li class="my-4"><hr class="dropdown-divider bg-light" /></li>
+                    
+                    <li>
+                        <a href="accounting.html" class="nav-link px-3 fw-bold">
+                        <span class="me-2"><i class="bi bi-calculator-fill"></i></span>
+                        <span>ACCOUNTING</span>
+                        </a>
+                    </li>
+                    
+                    <li class="my-4"><hr class="dropdown-divider bg-light" /></li>
+                    
+                    <li>
+                        <a href="report.html" class="nav-link px-3 fw-bold">
+                        <span class="me-2"><i class="bi bi-pencil square"></i></span>
+                        <span>REPORT</span>
+                        </a>
+                    </li>
+                    
+                </ul>
+            </nav>
+        </div>
+    </div>
+  <!-- offcanvas end -->
+    <main class="mt-5 p-5">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-12">
+            <h4>Dashboard</h4>
+            <hr>
+          </div>
+        </div>
+        <div class="row">
+          <!-- Total Enrolled Students -->
+          <div class="col-md-3 mt-3 mb-5">
+              <a href="students-data.html" class="text-decoration-none">
+                  <div class="dashboard-card bg-primary text-white h-100">
+                      <div class="card-body py-4 text-center">
+                          <h2 class="fw-bold mb-2 counter" data-target="1250">0</h2>
+                          <p class="fs-5">Total Enrolled Students</p>
+                      </div>
+                  </div>
+              </a>
+          </div>
+      
+          <!-- Outstanding School Fees -->
+          <div class="col-md-3 mt-3 mb-5">
+              <a href="payments.html" class="text-decoration-none">
+                  <div class="dashboard-card bg-warning text-dark h-100">
+                      <div class="card-body py-4 text-center">
+                          <h2 class="fw-bold mb-2 counter" data-target="450">0</h2>
+                          <p class="fs-5">Outstanding School Fees</p>
+                      </div>
+                  </div>
+              </a>
+          </div>
+      
+          <!-- Fees Collected -->
+          <div class="col-md-3 mt-3 mb-5">
+              <a href="accounting.html" class="text-decoration-none">
+                  <div class="dashboard-card bg-success text-white h-100">
+                      <div class="card-body py-4 text-center">
+                          <h2 class="fw-bold mb-2 counter" data-target="80000">₦0</h2>
+                          <p class="fs-5">Fees Collected</p>
+                      </div>
+                  </div>
+              </a>
+          </div>
+      
+          <!-- Total Fees Balance -->
+          <div class="col-md-3 mt-3 mb-5">
+              <a href="report.html" class="text-decoration-none">
+                  <div class="dashboard-card bg-danger text-white h-100">
+                      <div class="card-body py-4 text-center">
+                          <h2 class="fw-bold mb-2 counter" data-target="20000">₦0</h2>
+                          <p class="fs-5">Total Fees Balance</p>
+                      </div>
+                  </div>
+              </a>
+          </div>
+      </div>
+      
+      <script>
+          // Counting Effect
+          document.addEventListener('DOMContentLoaded', () => {
+              const counters = document.querySelectorAll('.counter');
+              
+              counters.forEach(counter => {
+                  counter.textContent = '0';
+                  const target = +counter.getAttribute('data-target');
+                  const increment = target / 100;
+      
+                  const updateCounter = () => {
+                      const current = +counter.textContent.replace(/₦/, '');
+                      if (current < target) {
+                          counter.textContent = `₦${Math.ceil(current + increment)}`;
+                          setTimeout(updateCounter, 30);
+                      } else {
+                          counter.textContent = `₦${target.toLocaleString()}`;
+                      }
+                  };
+      
+                  updateCounter();
+              });
+          });
+      </script>
+      
+        </div>
+<!-- 
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <div class="card h-100">
+              <div class="card-header">
+                <span class="me-2"><i class="bi bi-bar-chart-fill"></i></span>
+                Area Chart Example
+              </div>
+              <div class="card-body">
+                <canvas class="chart" width="400" height="200"></canvas>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+      </div> -->
+
+       <!-- Chart Section -->
+            <div class="col-md-6">
+              <div class="chart-container">
+                <canvas id="paymentChart"></canvas>
+              </div>
+              <!-- <div class="text-center mt-2 fw-bold">Full Payments and Debtors</div> -->
+              <div class="d-flex justify-content-around mt-3">
+                <!-- <button class="btn btn-primary">Chart View</button> -->
+                <!-- <button class="btn btn-secondary">Change Chart</button> -->
+                <select class="form-select w-25">
+                    <option>Select Chart</option>
+                    <option value="Bar">Bar</option>
+                    <option value="Line">Line</option>
+                    <option value="Pie">Pie</option>
+                  </select>
+                  
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    
+    <!-- Required JS Files -->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.0.2/dist/chart.min.js"></script>
+    <script src="./js/jquery-3.5.1.js"></script>
+    <script src="./js/jquery.dataTables.min.js"></script>
+    <!-- <script src="./js/dataTables.bootstrap5.min.js"></script>
+    <script src="./js/script.js"></script> -->
+
+
+</main>
+<script>
+// Chart Initialization
+const ctx = document.getElementById('paymentChart').getContext('2d');
+const paymentChart = new Chart(ctx, {
+  type: 'bar',
+  data: {
+    labels: [
+      'BASIC 8 A',
+      'Reception A',
+      'KG 1 A',
+      'BASIC 9 A',
+      'BASIC 7 B',
+      'Nursery 2',
+      'BASIC 5 C',
+      'KG 2',
+      'BASIC 6 A',
+      'Reception B',
+      'Nursery 1',
+      'BASIC 4 B',
+      'BASIC 2 A',
+      'BASIC 3 C',
+      'BASIC 1 A',
+      'KG 1 B',
+      'BASIC 9 B',
+      'BASIC 8 C',
+      'Reception C',
+      'BASIC 7 A',
+    ],
+    datasets: [
+      {
+        label: 'Number of Debtors',
+        data: [0, 2, 1, 2, 1, 2, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 2, 1],
+        backgroundColor: 'orange',
+      },
+      {
+        label: 'Full Payments',
+        data: [10, 8, 7, 25, 10, 3, 20, 5, 35, 12, 5, 4, 3, 2, 15, 5, 15, 18, 8, 20],
+        backgroundColor: 'green',
+      },
+    ],
+  },
+  options: {
+    responsive: true,
+    plugins: {
+      legend: {
+        display: true,
+      },
+      title: {
+        display: true,
+        text: 'Full Payments and Debtors',
+      },
+    },
+    scales: {
+      x: {
+        stacked: false,
+      },
+      y: {
+        beginAtZero: true,
+      },
+    },
+  },
+});
+
+// Chart Type Switching
+document.querySelector('.form-select').addEventListener('change', function () {
+  const selectedChartType = this.value.toLowerCase(); // Get selected chart type
+  paymentChart.config.type = selectedChartType; // Update chart type
+  paymentChart.update(); // Refresh chart with the new type
+});
+
+</script>
+  </body>
+</html>
