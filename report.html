@@ -15,7 +15,7 @@
    
     <style>
     body {
-        overflow: hidden;
+          overflow: auto;
     }
     .report-parameters {
           display: flex;
@@ -157,17 +157,8 @@
                         EXPLORE
                         </div>
                     </li>
-
-                    <li class="my-4"><hr class="dropdown-divider bg-light" /></li>
                     
-                    <li>
-                        <a href="homepage.html" class="nav-link px-3 fw-bold">
-                        <span class="me-2"><i class="bi bi-house-fill"></i></span>
-                        <span>HOME</span>
-                        </a>
-                    </li>
-                    
-                    <li class="my-4"><hr class="dropdown-divider bg-light" /></li>
+                    <li class="my-1"><hr class="dropdown-divider bg-light" /></li>
                     
                     <li>
                         <a href="dashboard.html" class="nav-link px-3 fw-bold">
@@ -176,7 +167,7 @@
                         </a>
                     </li>
                     
-                    <li class="my-4"><hr class="dropdown-divider bg-light" /></li>
+                    <li class="my-1"><hr class="dropdown-divider bg-light" /></li>
                     
                     <li>
                         <a href="students-data.html" class="nav-link px-3 fw-bold">
@@ -185,7 +176,7 @@
                         </a>
                     </li>
                     
-                    <li class="my-4"><hr class="dropdown-divider bg-light" /></li>
+                    <li class="my-1"><hr class="dropdown-divider bg-light" /></li>
                     
                     <li>
                         <a href="payments.html" class="nav-link px-3 fw-bold">
@@ -194,7 +185,7 @@
                         </a>
                     </li>
                     
-                    <li class="my-4"><hr class="dropdown-divider bg-light" /></li>
+                    <li class="my-1"><hr class="dropdown-divider bg-light" /></li>
                     
                     <li>
                         <a href="accounting.html" class="nav-link px-3 fw-bold">
@@ -203,7 +194,7 @@
                         </a>
                     </li>
                     
-                    <li class="my-4"><hr class="dropdown-divider bg-light" /></li>
+                    <li class="my-1"><hr class="dropdown-divider bg-light" /></li>
                     
                     <li>
                         <a href="report.html" class="nav-link px-3 fw-bold active">
@@ -228,7 +219,7 @@
       background-repeat: no-repeat;
     "
   >
-    <div class="container-fluid p-5 bg-white rounded shadow" style="max-width: 1200px;">
+    <div class="container-fluid p-5 m-5 bg-white rounded shadow" style="max-width: 1200px;">
       <div class="row">
         <h4 class="text-dark">Report Parameters</h4>
         <hr />
@@ -236,27 +227,31 @@
         <!-- Term Report -->
             <div>
               <label class="form-label">Term Report</label>
-              <div class="mb-3">
+              <div class="row mb-3">
                 <label for="session" class="form-label">Session</label>
                 <select id="session" class="form-control">
                   <option>03/2023/2024</option>
                   <option>02/2022/2023</option>
                 </select>
               </div>
-              <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#reportModal">Term Report</button>
+              <div class="row mt-3 justify-content-end">
+                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#reportModal">Term Report</button>
+              </div>
             </div>
   
             <!-- Year Report -->
             <div>
               <label class="form-label">Year Report</label>
-              <div class="mb-3">
+              <div class="row mb-3">
                 <label for="year" class="form-label">Year</label>
                 <select id="year" class="form-control">
                   <option>2024</option>
-                  <option>2023</option>
+                  <option>2023</opti  on>
                 </select>
               </div>
-              <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#reportModal">Year Report</button>
+              <div class="row mt-3 justify-content-end">
+                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#reportModal">Year Report</button>
+              </div>
             </div>
           </div>
         </div>
@@ -452,13 +447,14 @@
               <div class="d-flex justify-content-around mt-3">
                 <button class="btn btn-primary">Chart View</button>
                 <!-- <button class="btn btn-secondary">Change Chart</button> -->
-                <select class="form-select w-25">
+                <div class="d-flex justify-content-center">
+                  <select class="form-select">
                     <option>Select Chart</option>
                     <option value="Bar">Bar</option>
                     <option value="Line">Line</option>
                     <option value="Pie">Pie</option>
                   </select>
-                  
+                </div>
               </div>
             </div>
           </div>
