@@ -14,18 +14,48 @@
     <title>School Admin App Dev - Accounting</title>
     <style>
       body {
-        overflow: hidden; /* Remove scroll bar */
+        overflow: hidden; /* Prevent scrolling of the page */
       }
-
-      .modal-dialog {
-        max-width: 90%; /* Adjust modal width */
-        margin: auto;
+    
+      main {
+        height: 100vh; /* Occupy the full height of the viewport */
+        overflow: hidden; /* Prevent scrolling of the main section */
+        display: flex;
+        flex-direction: column;
       }
-
-      .modal-content {
-        overflow: visible; /* Ensure no scrollbars appear */
+    
+      .tab-content {
+        flex-grow: 1; /* Allow the tab content to expand */
+        overflow: hidden; /* Prevent scrolling in the tab content */
+        display: flex;
+        flex-direction: column;
+      }
+    
+      .tab-pane {
+        flex-grow: 1; /* Allow the tab pane to fill the available space */
+        overflow: auto; /* Enable scrolling inside the table section */
+      }
+    
+      .table-container {
+        width: 100%; /* Match the container width */
+        overflow-x: auto; /* Enable horizontal scrolling for the table */
+      }
+    
+      table {
+        width: 100%; /* Ensure the table fills the container width */
+        min-width: 800px; /* Set a reasonable minimum width for usability */
+        table-layout: auto; /* Allow columns to resize based on content */
+        border-collapse: collapse; /* Prevent extra spacing between table cells */
+      }
+    
+      th, td {
+        white-space: nowrap; /* Prevent text wrapping for better readability */
+        text-align: center; /* Center-align content in table cells */
+        padding: 0.75rem; /* Add some padding for better visuals */
       }
     </style>
+    
+    
   </head>
   <body>
     <!-- top navigation bar -->
@@ -109,16 +139,7 @@
                         </div>
                     </li>
 
-                    <li class="my-4"><hr class="dropdown-divider bg-light" /></li>
-                    
-                    <li>
-                        <a href="homepage.html" class="nav-link px-3 fw-bold">
-                        <span class="me-2"><i class="bi bi-house-fill"></i></span>
-                        <span>HOME</span>
-                        </a>
-                    </li>
-                    
-                    <li class="my-4"><hr class="dropdown-divider bg-light" /></li>
+                    <li class="my-1"><hr class="dropdown-divider bg-light" /></li>
                     
                     <li>
                         <a href="dashboard.html" class="nav-link px-3 fw-bold">
@@ -127,7 +148,7 @@
                         </a>
                     </li>
                     
-                    <li class="my-4"><hr class="dropdown-divider bg-light" /></li>
+                    <li class="my-1"><hr class="dropdown-divider bg-light" /></li>
                     
                     <li>
                         <a href="students-data.html" class="nav-link px-3 fw-bold">
@@ -136,7 +157,7 @@
                         </a>
                     </li>
                     
-                    <li class="my-4"><hr class="dropdown-divider bg-light" /></li>
+                    <li class="my-1"><hr class="dropdown-divider bg-light" /></li>
                     
                     <li>
                         <a href="payments.html" class="nav-link px-3 fw-bold">
@@ -145,7 +166,7 @@
                         </a>
                     </li>
                     
-                    <li class="my-4"><hr class="dropdown-divider bg-light" /></li>
+                    <li class="my-1"><hr class="dropdown-divider bg-light" /></li>
                     
                     <li>
                         <a href="accounting.html" class="nav-link px-3 fw-bold active">
@@ -154,7 +175,7 @@
                         </a>
                     </li>
                     
-                    <li class="my-4"><hr class="dropdown-divider bg-light" /></li>
+                    <li class="my-1"><hr class="dropdown-divider bg-light" /></li>
                     
                     <li>
                         <a href="report.html" class="nav-link px-3 fw-bold">
