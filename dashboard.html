@@ -14,18 +14,107 @@
     <title>School Admin App Dev - Dashboard</title>
     <style>
       body {
-        overflow: hidden; /* Remove scroll bar */
+          overflow: auto;
       }
-
+  
       .modal-dialog {
-        max-width: 90%; /* Adjust modal width */
-        margin: auto;
+          max-width: 90%; /* Adjust modal width */
+          margin: auto;
       }
-
+  
       .modal-content {
-        overflow: visible; /* Ensure no scrollbars appear */
+          overflow: visible; /* Ensure no scrollbars appear */
       }
-    </style>
+  
+      .dashboard-card {
+    position: relative;
+    color: white;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column; /* Stack content vertically */
+    align-items: center; /* Center-align items */
+    justify-content: center; /* Center content */
+    padding: 1.5rem 1rem;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center; /* Center-align text */
+}
+
+.dashboard-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.dashboard-card img {
+    width: 80px;
+    
+    height: 80px;
+    margin: 0 auto 10px auto;
+    object-fit: contain;
+    filter: grayscale(100%) brightness(0.8);
+    opacity: 0.3;
+}
+
+.dashboard-card.bg-static img, 
+.dashboard-card.bg-team img {
+  width: 100px;
+  height: 100px;
+    opacity: 0.3;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .dashboard-card img {
+        width: 60px; /* Slightly smaller on smaller screens */
+        height: 60px; /* Match width for uniformity */
+    }
+}
+
+@media (max-width: 576px) {
+    .dashboard-card img {
+        width: 50px; /* Adjust for very small screens */
+        height: 50px; /* Maintain square size */
+    }
+}
+
+    .bg-static {
+        background-color: #6c63ff;
+    }
+
+    .bg-slider {
+        background-color: #f67280;
+    }
+
+    .bg-team {
+        background-color: #ff9f68;
+    }
+
+    .bg-services {
+        background-color: #2ecc71;
+    }
+
+    .bg-portfolio {
+        background-color: #3498db;
+    }
+
+    .bg-user {
+        background-color: #e74c3c;
+    }
+
+    .bg-enquiries {
+        background-color: #9b59b6;
+    }
+
+    .chart-container {
+        width: 100%;
+        max-width: 800px; /* Limit the max width for larger screens */
+        margin: auto;
+    }
+
+  </style>
+  
   </head>
   <body>
     <!-- top navigation bar -->
@@ -109,16 +198,7 @@
                         </div>
                     </li>
 
-                    <li class="my-4"><hr class="dropdown-divider bg-light" /></li>
-                    
-                    <li>
-                        <a href="homepage.html" class="nav-link px-3 fw-bold">
-                        <span class="me-2"><i class="bi bi-house-fill"></i></span>
-                        <span>HOME</span>
-                        </a>
-                    </li>
-                    
-                    <li class="my-4"><hr class="dropdown-divider bg-light" /></li>
+                    <li class="my-1"><hr class="dropdown-divider bg-light" /></li>
                     
                     <li>
                         <a href="dashboard.html" class="nav-link px-3 fw-bold active">
@@ -127,7 +207,7 @@
                         </a>
                     </li>
                     
-                    <li class="my-4"><hr class="dropdown-divider bg-light" /></li>
+                    <li class="my-1"><hr class="dropdown-divider bg-light" /></li>
                     
                     <li>
                         <a href="students-data.html" class="nav-link px-3 fw-bold">
@@ -136,7 +216,7 @@
                         </a>
                     </li>
                     
-                    <li class="my-4"><hr class="dropdown-divider bg-light" /></li>
+                    <li class="my-1"><hr class="dropdown-divider bg-light" /></li>
                     
                     <li>
                         <a href="payments.html" class="nav-link px-3 fw-bold">
@@ -145,7 +225,7 @@
                         </a>
                     </li>
                     
-                    <li class="my-4"><hr class="dropdown-divider bg-light" /></li>
+                    <li class="my-1"><hr class="dropdown-divider bg-light" /></li>
                     
                     <li>
                         <a href="accounting.html" class="nav-link px-3 fw-bold">
@@ -154,7 +234,7 @@
                         </a>
                     </li>
                     
-                    <li class="my-4"><hr class="dropdown-divider bg-light" /></li>
+                    <li class="my-1"><hr class="dropdown-divider bg-light" /></li>
                     
                     <li>
                         <a href="report.html" class="nav-link px-3 fw-bold">
@@ -177,78 +257,107 @@
           </div>
         </div>
         <div class="row">
-          <!-- Total Enrolled Students -->
-          <div class="col-md-3 mt-3 mb-5">
-              <a href="students-data.html" class="text-decoration-none">
-                  <div class="dashboard-card bg-primary text-white h-100">
-                      <div class="card-body py-4 text-center">
-                          <h2 class="fw-bold mb-2 counter" data-target="1250">0</h2>
-                          <p class="fs-5">Total Enrolled Students</p>
-                      </div>
+          <!-- Static Pages -->
+          <div class="col-12 col-md-6 col-lg-3 mt-3 mb-5">
+              <div class="dashboard-card bg-static h-100">
+                  <div>
+                      <h1 class="fw-bold mb-2">4</h1>
+                      <p class="fs-6">Total Static Pages</p>
                   </div>
-              </a>
+                  <img src="./images/bar-chart.svg" alt="Static Pages">
+              </div>
           </div>
       
-          <!-- Outstanding School Fees -->
+          <!-- Slider -->
           <div class="col-md-3 mt-3 mb-5">
-              <a href="payments.html" class="text-decoration-none">
-                  <div class="dashboard-card bg-warning text-dark h-100">
-                      <div class="card-body py-4 text-center">
-                          <h2 class="fw-bold mb-2 counter" data-target="450">0</h2>
-                          <p class="fs-5">Outstanding School Fees</p>
-                      </div>
+              <div class="dashboard-card bg-slider h-100">
+                  <div>
+                      <h1 class="fw-bold mb-2">15</h1>
+                      <p class="fs-6">Total Slider</p>
                   </div>
-              </a>
+                  <img src="./images/image-picture-gallery-2.1024x1024.png" alt="Slider">
+              </div>
           </div>
       
-          <!-- Fees Collected -->
+          <!-- Team -->
           <div class="col-md-3 mt-3 mb-5">
-              <a href="accounting.html" class="text-decoration-none">
-                  <div class="dashboard-card bg-success text-white h-100">
-                      <div class="card-body py-4 text-center">
-                          <h2 class="fw-bold mb-2 counter" data-target="80000">₦0</h2>
-                          <p class="fs-5">Fees Collected</p>
-                      </div>
+              <div class="dashboard-card bg-team h-100">
+                  <div>
+                      <h1 class="fw-bold mb-2">70</h1>
+                      <p class="fs-6">Total Team</p>
                   </div>
-              </a>
+                  <img src="./images/person-add.svg" alt="Team">
+              </div>
           </div>
       
-          <!-- Total Fees Balance -->
+          <!-- Services -->
           <div class="col-md-3 mt-3 mb-5">
-              <a href="report.html" class="text-decoration-none">
-                  <div class="dashboard-card bg-danger text-white h-100">
-                      <div class="card-body py-4 text-center">
-                          <h2 class="fw-bold mb-2 counter" data-target="20000">₦0</h2>
-                          <p class="fs-5">Total Fees Balance</p>
-                      </div>
+              <div class="dashboard-card bg-services h-100">
+                  <div>
+                      <h1 class="fw-bold mb-2">20</h1>
+                      <p class="fs-6">Total Services</p>
                   </div>
-              </a>
+                  <img src="./images/hammer-wrench.960x1024.png" alt="Services">
+              </div>
+          </div>
+      
+          <!-- Portfolio -->
+          <div class="col-md-3 mt-3 mb-5">
+              <div class="dashboard-card bg-portfolio h-100">
+                  <div>
+                      <h1 class="fw-bold mb-2">30</h1>
+                      <p class="fs-6">Total Portfolio</p>
+                  </div>
+                  <img src="./images/pie-chart.1024x1024.png" alt="Portfolio">
+              </div>
+          </div>
+      
+          <!-- Users -->
+          <div class="col-md-3 mt-3 mb-5">
+              <div class="dashboard-card bg-user h-100">
+                  <div>
+                      <h1 class="fw-bold mb-2">50</h1>
+                      <p class="fs-6">Total Users</p>
+                  </div>
+                  <img src="./images/User placeholder.png" alt="Users">
+              </div>
+          </div>
+      
+          <!-- Enquiries -->
+          <div class="col-md-3 mt-3 mb-5">
+              <div class="dashboard-card bg-enquiries h-100">
+                  <div>
+                      <h1 class="fw-bold mb-2">65</h1>
+                      <p class="fs-6">Total Enquiries</p>
+                  </div>
+                  <img src="./images/envelope.1024x821.png" alt="Enquiries">
+              </div>
           </div>
       </div>
       
       <script>
-          // Counting Effect
-          document.addEventListener('DOMContentLoaded', () => {
-              const counters = document.querySelectorAll('.counter');
-              
-              counters.forEach(counter => {
-                  counter.textContent = '0';
-                  const target = +counter.getAttribute('data-target');
-                  const increment = target / 100;
+        document.addEventListener("DOMContentLoaded", () => {
+            const counters = document.querySelectorAll(".dashboard-card h2");
       
-                  const updateCounter = () => {
-                      const current = +counter.textContent.replace(/₦/, '');
-                      if (current < target) {
-                          counter.textContent = `₦${Math.ceil(current + increment)}`;
-                          setTimeout(updateCounter, 30);
-                      } else {
-                          counter.textContent = `₦${target.toLocaleString()}`;
-                      }
-                  };
+            counters.forEach(counter => {
+                const target = +counter.textContent; // Parse the target number
+                counter.textContent = "10"; // Start from ten
       
-                  updateCounter();
-              });
-          });
+                const updateCount = () => {
+                    const current = +counter.textContent;
+                    const increment = Math.ceil(target / 100); // Adjust the speed
+      
+                    if (current < target) {
+                        counter.textContent = current + increment;
+                        setTimeout(updateCount, 20); // Delay in milliseconds
+                    } else {
+                        counter.textContent = target; // Ensure it reaches the target
+                    }
+                };
+      
+                updateCount();
+            });
+        });
       </script>
       
         </div>
@@ -275,15 +384,16 @@
                 <canvas id="paymentChart"></canvas>
               </div>
               <!-- <div class="text-center mt-2 fw-bold">Full Payments and Debtors</div> -->
-              <div class="d-flex justify-content-around mt-3">
-                <!-- <button class="btn btn-primary">Chart View</button> -->
-                <!-- <button class="btn btn-secondary">Change Chart</button> -->
-                <select class="form-select w-25">
+              <!-- <div class="d-flex justify-content-around mt-3"> -->
+                <div class="d-flex justify-content-center mt-3">
+                  <select class="form-select">
                     <option>Select Chart</option>
                     <option value="Bar">Bar</option>
                     <option value="Line">Line</option>
                     <option value="Pie">Pie</option>
                   </select>
+                </div>
+                
                   
               </div>
             </div>
@@ -301,9 +411,7 @@
     <script src="./js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@3.0.2/dist/chart.min.js"></script>
     <script src="./js/jquery-3.5.1.js"></script>
-    <script src="./js/jquery.dataTables.min.js"></script>
-    <!-- <script src="./js/dataTables.bootstrap5.min.js"></script>
-    <script src="./js/script.js"></script> -->
+
 
 
 </main>
