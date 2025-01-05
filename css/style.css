@@ -102,13 +102,3 @@ button {
       width: 100%;
   }
 }
-
-/* Fixed Width for Select */
-select.form-select {
-  width: 250px; /* Fixed width for all screens */
-  padding: 0.5rem; /* Add padding for better appearance */
-  border: 1px solid #ccc; /* Consistent border */
-  border-radius: 4px; /* Rounded corners */
-  font-size: 1rem; /* Consistent font size */
-  box-sizing: border-box; /* Ensures padding does not affect width */
-}
