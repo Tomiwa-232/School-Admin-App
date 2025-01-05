@@ -69,11 +69,6 @@ button {
       font-size: 0.9rem;
   }
 
-  .btn-primary {
-      height: 45px;
-      font-size: 0.9rem;
-  }
-
   .btn {
     font-size: 0.9rem; /* Adjust font size for smaller screens */
     padding: 0 0 1px 0; /* Adjust padding for smaller buttons */
